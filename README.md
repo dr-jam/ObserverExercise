@@ -36,7 +36,7 @@ The points distrubtion for the stages totals to 70 points and can be found in th
 | Stage | Points |
 |:-----:|:------:|
 |  1.1  |   10   |
-|  1.2  |   15   |
+|  1.2  |   10   |
 |  2.1  |   15   |
 |  2.2  |   10   |
 |  2.3  |   10   |

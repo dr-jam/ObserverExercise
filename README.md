@@ -4,7 +4,7 @@
 
 The goals for this project are:
 * To gain experience using the Watcher variant of the Observer design pattern.
-* To implement and use the Publisher/Subscriber variant of the Observer pattern.
+* To implement and use the Publisher/Subscriber pattern.
 * Implement functionality within the given project that adheres to the patterns presented in this assignment.
 
 To learn more about the Observer design pattern, read the following:

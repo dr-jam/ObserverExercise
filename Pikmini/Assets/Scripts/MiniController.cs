@@ -40,11 +40,8 @@ public class MiniController : MonoBehaviour
 
     private void RandomizeBody()
     {
-        var ranScale = Random.Range(0.5f, 1.0f);
-        foreach (Transform child in transform)
-        {
-            child.localScale *= ranScale;
-        }
+        var randomScale = Random.Range(0.1f, 1.5f);
+        this.gameObject.transform.localScale *= randomScale;
     }
 
     private void RandomizeThrottle()

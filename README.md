@@ -44,7 +44,7 @@ The points distrubtion for the stages totals to 70 points and can be found in th
 
 ### Due Date and Submission Information
 
-This exercise is due Wednesday May 1st at 11:59pm on GitHub Classroom. The master branch as found on your individual exercise repository will be evaluated.
+This exercise is due Thursday, October 24th at 11:59pm on GitHub Classroom. The master branch as found on your individual exercise repository will be evaluated.
 
 ## Stage 1: Watcher Pattern
 In this stage, you will be creating a script that will watch the ColorBind script.
@@ -59,9 +59,9 @@ In order to have the Pikmini change `Color`, the Pikmini must be watching the `C
 
 In order to do this, you must:
 
-* Create a new `ColorWatcher` field within Pikimini.
+* Create a new property of type `ColorWatcher` within the 'MiniController' class.
 
-* Instantiate a new `ColorWatcher` object in Pikmini within the `Awake` function.
+* Instantiate a new `ColorWatcher` object within the `Awake` function for the new property.
 
 * Utilize the `Update` function within `MiniController.cs` in conjuction with the `ColorWatcher`s `Watch` method and the `ColorBinding` `ScriptableObject`. 
 

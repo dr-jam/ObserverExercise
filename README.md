@@ -46,6 +46,17 @@ The points distrubtion for the stages totals to 70 points and can be found in th
 
 This exercise is due Thursday, October 24th at 11:59pm on GitHub Classroom. The master branch as found on your individual exercise repository will be evaluated.
 
+## Description of Provided Unity Project
+
+### Scene and Game Objects in the Hierarchy
+
+This project constists of a single scene call `PikminiPlayground`. The following are descriptions of the game objects in the scene that you will be interacting with for this exercise:  
+
+**ScriptHome** is an empty `GameObject` container for select scripts.  
+**Canvas** holds the user interface elements used to select shapes, colors, and send commands to the Pikminis.  
+**Cirlce Destination, Cube Desination, and Cylinder Destination** are the locations that the Pikiminis can be sent to.  
+**Spawn** serves as the initial spawn point for the Pikminis and is where the `GenerateMinis.cs` script resides.
+
 ## Stage 1: Watcher Pattern
 In this stage, you will be creating a script that will watch the ColorBind script.
 You will be using the polling watcher variant of the observer pattern to watch one of the three colors.

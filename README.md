@@ -50,12 +50,19 @@ This exercise is due Thursday, October 24th at 11:59pm on GitHub Classroom. The 
 
 ### Scene and Game Objects in the Hierarchy
 
-This project constists of a single scene call `PikminiPlayground`. The following are descriptions of the game objects in the scene that you will be interacting with for this exercise:  
+This project constists of a single scene call `PikminiPlayground` that is located in the Assets/Scenes directory. The following are descriptions of the game objects in the scene that you will be interacting with for this exercise:  
 
-**ScriptHome** is an empty `GameObject` container for select scripts.  
-**Canvas** holds the user interface elements used to select shapes, colors, and send commands to the Pikminis.  
-**Cirlce Destination, Cube Desination, and Cylinder Destination** are the locations that the Pikiminis can be sent to.  
-**Spawn** serves as the initial spawn point for the Pikminis and is where the `GenerateMinis.cs` script resides.
+* **ScriptHome** is an empty `GameObject` container for select scripts.  
+* **Canvas** holds the user interface elements used to select shapes, colors, and send commands to the Pikminis.  
+* **Cirlce Destination, Cube Desination, and Cylinder Destination** are the locations that the Pikiminis can be sent to.  
+* **Spawn** serves as the initial spawn point for the Pikminis and is where the `GenerateMinis.cs` script resides.  
+
+### Assets and Scripts
+
+**Prefabs/AniMini** is the prefab that will used to instantiate Pikminis. There is an alternate meeple-themed prefab named **Mini** that you can explore as well.  
+
+The following are the scripts involved in this project:  
+
 
 ## Stage 1: Watcher Pattern
 In this stage, you will be creating a script that will watch the ColorBind script.

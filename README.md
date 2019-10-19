@@ -64,7 +64,7 @@ This project constists of a single scene call `PikminiPlayground` that is locate
 The following are the scripts involved in this project:  
 * **ButtonManager.cs** is a utility script that holds properites and methods that are used for responding to button pressed in the user interface.
 * **ColorBind.cs** holds the unique colors for *Group1*, *Group2*, and *Group3* of Pikminis. It also contains methods to retrieve the color of a group (which is critical for the watchers in Stage 1!). 
-* **ColorBindings** is not a script but an instantiation of an asset created via the [CreateAssetMneu](https://docs.unity3d.com/ScriptReference/CreateAssetMenuAttribute.html) attribute of `ColorBind`. You will not have to deal with the details of this attribute in the project. However, it is a handy trick to have in your bag.
+* **ColorBindings** is not a script but an instantiation of an asset created via the [CreateAssetMenu](https://docs.unity3d.com/ScriptReference/CreateAssetMenuAttribute.html) attribute of `ColorBind`. You will not have to deal with the details of this attribute in the project. However, it is a handy trick to have in your bag.
 * **ColorWatcher.cs** is a partial implementation of the Watcher variant of the Observer pattern that you will complete it in this exercise.
 * **GenerateMinis.cs** is the script that generates randomly-parameterized Pikminis. In the stock exercise project, it is a component of the `Spawn` game object.
 * **MiniController.cs** contains information about and controls individual Pikminis. Each generated Pikimini contains a `MiniController` component. You will be heavily modifying this file throughout the exercise.

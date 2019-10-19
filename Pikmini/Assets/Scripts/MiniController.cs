@@ -8,6 +8,7 @@ public class MiniController : MonoBehaviour
     private NavMeshAgent agent;
     [SerializeField]
     private ColorBind ColorBindings;
+    private ColorWatcher Watcher;
     private PublisherManager PublisherManager;
     [SerializeField]
     private float Throttle;
@@ -20,6 +21,7 @@ public class MiniController : MonoBehaviour
         this.RandomizeThrottle();
         this.GroupID = Random.Range(1, 4);
         this.PublisherManager.Register(GroupID, OnMoveMessage);
+        this.Watcher = new ColorWatcher(this.ColorBindings.);
     }
 
     void OnMouseDown()

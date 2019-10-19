@@ -54,4 +54,11 @@ public class ButtonManager : MonoBehaviour
             PublisherManager.SendMessageWithPublisher(this.ColorID, this.Destination);
         }
     }
+
+    public void Update()
+    {
+        this.colorText0.color = this.colorbindings.GetGroup1Color();
+        this.colorText1.color = this.colorbindings.GetGroup2Color();
+        this.colorText2.color = this.colorbindings.GetGroup3Color();
+    }
 }

@@ -16,6 +16,9 @@ public class ColorWatcher :  IWatcher
     }
     public void Watch ()
     {
-
+        //Poll for a potential update to the color.
+        //If the polled value is different than Value:
+        //-update via CallBack
+        //-store the updated value as Value
     }
 }

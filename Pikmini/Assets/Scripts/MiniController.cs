@@ -18,10 +18,26 @@ public class MiniController : MonoBehaviour
     {
         this.PublisherManager = GameObject.FindGameObjectWithTag("Script Home").GetComponent<PublisherManager>();
         this.RandomizeBody();
-        this.RandomizeThrottle();
         this.GroupID = Random.Range(1, 4);
         this.PublisherManager.Register(GroupID, OnMoveMessage);
-        this.Watcher = new ColorWatcher(this.ColorBindings.);
+        switch(this.GroupID)
+        {
+            case 1:
+                this.gameObject.GetComponent<Material>().color = this.ColorBindings.GetGroup1Color();
+                //set up a watcher
+                break;
+            case 2:
+                this.gameObject.GetComponent<Material>().color = this.ColorBindings.GetGroup1Color();
+                //set up a watcher
+                break;
+            case 3:
+                this.gameObject.GetComponent<Material>().color = this.ColorBindings.GetGroup1Color();
+                //set up a watcher
+                break;
+            default:
+                Debug.Log("MiniController is Awake but has no group.");
+                break;
+        }
     }
 
     void OnMouseDown()
@@ -44,11 +60,6 @@ public class MiniController : MonoBehaviour
     {
         var randomScale = Random.Range(0.1f, 1.5f);
         this.gameObject.transform.localScale *= randomScale;
-    }
-
-    private void RandomizeThrottle()
-    {
-        Throttle = Random.Range(0.0f, 10.0f);   
     }
 
     public void OnMoveMessage(Vector3 destination)

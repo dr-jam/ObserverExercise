@@ -140,11 +140,11 @@ You should create `Register`, `Unregister`, and `Notify` methods within your own
 
 With this newly created `Publisher` class, `Instantiate` three publishers within `PublisherManager.cs`.
 
-However, the `PublisherManager.cs` file needs its own `Register` and `Unregister`. `SendMessageWithPublisher` will be discussed in a later stage.
+However, the `PublisherManager.cs` file needs its own `Subscribe` and `Unsubscribe` methods. `SendMessageWithPublisher` will be discussed in a later stage.
 
-`Register` should check to see which `GroupID` has been passed in and `Register` the `callback` with the correct `Publisher`.
+`SubscribeToGroup` should check to see which `GroupID` has been passed in and `Subscribe` the `callback` with the correct `Publisher`.
 
-`Unregister` should check to see which `GroupID` has been passed in and `Unregister` the `callback` with the correct `Publisher`.
+`UnsubscribeFromGroup` should check to see which `GroupID` has been passed in and `Sunsubscribe` the `callback` with the correct `Publisher`.
 
 ### 2.3: Sending messages
 

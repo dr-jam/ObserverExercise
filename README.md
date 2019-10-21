@@ -85,7 +85,7 @@ In order to have the Pikmini change `Color`, the Pikmini must be watching the `C
 
 Here is a diagram that shows the relationship an instance of `ColorWatcher` has to the other scripts:
 
-![Simplified ColorWatcher flow diagram](Watcher.svg)  
+![Simplified ColorWatcher flow diagram](Watcher.svg)
 
 In order to do this, you must:
 

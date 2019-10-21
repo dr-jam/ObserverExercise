@@ -89,11 +89,9 @@ Here is a diagram that shows the relationship an instance of `ColorWatcher` has 
 
 In order to do this, you must:
 
-* Create a new property of type `ColorWatcher` within the 'MiniController' class.
+* Instantiate new `ColorWatcher` objects within the `Awake` function that is passes in the correct delegates for the assigned `GroupID`.
 
-* Instantiate a new `ColorWatcher` object within the `Awake` function for the new property.
-
-* Utilize the `Update` function within `MiniController.cs` in conjuction with the `ColorWatcher`s `Watch` method and the `ColorBinding` `ScriptableObject`. 
+* Create an `Update` function within `MiniController.cs` that executes with the `ColorWatcher`s `Watch` method. The `Watch` method 
 
 
 In order to properly get the Pikimini to `Watch`, `ColorWatcher` needs a more fleshed out `Watch` method. This method should:

@@ -91,12 +91,11 @@ In order to do this, you must:
 
 * Instantiate new `ColorWatcher` objects within the `Awake` function that is passes in the correct delegates for the assigned `GroupID`.
 
-* Create an `Update` function within `MiniController.cs` that executes with the `ColorWatcher`s `Watch` method. The `Watch` method 
-
+* Create an `Update` function within `MiniController.cs` that executes with the `ColorWatcher`s `Watch` method. You will implement this method next.
 
 In order to properly get the Pikimini to `Watch`, `ColorWatcher` needs a more fleshed out `Watch` method. This method should:
 
-* store the return value  of  `GetColorValue` to a variable. This variable should be named `PolledValue`.
+* Store the return value  of  `GetColorValue` to a variable. This variable should be named `PolledValue`.
 
 * Compare the `PolledValue` to the current `Value`. 
 
@@ -106,21 +105,17 @@ If implemented correctly, the Pikminis should be updating their color to whateve
 
 By altering the `Color` in the `ColorBinding` asset within the Editor, the Pikmini should update their `Color` accordingly.
 
-### 1.2: The Pikmini, only watching sometimes now.
+### 1.2: Pikmini watching periodically.
 
-Turns out that watching something constantly can be a little offputting to both the Pikminis and the efficiency of your code. 
-
-To fix this, use the `Throttle` field within the `MiniController.cs` to "throttle" how often a Pikmini should `Watch`.
-
-It should look something like:
+Constantly polling a value to check for changes is both computationally expensive and is taxing on the flighty Pikminis. To address this problem, the `Watch` function should be called less often. We will use use the `Throttle` field within the `MiniController.cs` to "throttle" how often a Pikmini should `Watch`:
 
 *  In `Update`, check to see if `TimeToWatch` is greater than `Throttle`.
 
-* If it is, then let the Pikmini `Watch`.
+* If it is, then let the Pikmini `Watch` and reset `TimeToWatch` to `0.0f`.
 
-* Reset `TimeToWatch`.
+* If it is not, add `Time.deltaTime` to `TimeSinceChecked`.
 
-If implemented correctly, the Pikmini should have a delay before their `Color` changes.
+If implemented correctly, the Pikmini should have a controllable delay before their `Color` changes.
 
 ## Stage 2: PubSub Pattern
 In this stage, This stage will focus on the Publisher/Subscriber variant of the Observer pattern as discussed in lecture. 

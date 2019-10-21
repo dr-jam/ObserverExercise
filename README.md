@@ -152,7 +152,7 @@ Now the Pikminis are able to subscribe to a new publisher or drop that publisher
 
 In order to do this, the `SendMessageWithPublisher` within the `PublisherManager.cs` file must be implemented for our small Pikminis to move around! 
 
-`SendMessageWithPublisher` should `Notify` the correct `Publisher` with a `Message` of the new `Destination`.
+`SendMessageWithPublisher` should `Notify` the correct `Publisher` with a the new `Destination`.
 
 At this point, by using the UIButtons, you should be able to click on a color button and a destination button to set which group should go where. The correctly colored Pikminis should move to the chosen destination.
 

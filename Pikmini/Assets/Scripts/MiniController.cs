@@ -5,7 +5,7 @@ using UnityEngine.AI;
 public class MiniController : MonoBehaviour
 {
     [SerializeField]
-    private NavMeshAgent agent;
+    private NavMeshAgent Agent;
     [SerializeField]
     private ColorBind ColorBindings;
     private ColorWatcher Watcher;
@@ -19,19 +19,19 @@ public class MiniController : MonoBehaviour
         this.PublisherManager = GameObject.FindGameObjectWithTag("Script Home").GetComponent<PublisherManager>();
         this.RandomizeBody();
         this.GroupID = Random.Range(1, 4);
-        this.PublisherManager.Register(GroupID, OnMoveMessage);
+        this.PublisherManager.SubscribeToGroup(GroupID, OnMoveMessage);
         switch(this.GroupID)
         {
             case 1:
-                this.gameObject.GetComponent<Material>().color = this.ColorBindings.GetGroup1Color();
+                this.ChangeColor(this.ColorBindings.GetGroup1Color());
                 //set up a watcher for Stage 1.1
                 break;
             case 2:
-                this.gameObject.GetComponent<Material>().color = this.ColorBindings.GetGroup1Color();
+                this.ChangeColor(this.ColorBindings.GetGroup2Color());
                 //set up a watcher for Stage 1.1
                 break;
             case 3:
-                this.gameObject.GetComponent<Material>().color = this.ColorBindings.GetGroup1Color();
+                this.ChangeColor(this.ColorBindings.GetGroup3Color());
                 //set up a watcher for Stage 1.1
                 break;
             default:
@@ -42,9 +42,9 @@ public class MiniController : MonoBehaviour
 
     void OnMouseDown()
     {
-        this.PublisherManager.Unregister(GroupID, OnMoveMessage);
+        this.PublisherManager.UnsubscribeFromGroup(GroupID, OnMoveMessage);
         this.GroupID = (this.GroupID % this.PublisherManager.GroupCount) + 1;
-        this.PublisherManager.Register(GroupID, OnMoveMessage);
+        this.PublisherManager.SubscribeToGroup(GroupID, OnMoveMessage);
     }
 
     /// <summary>
@@ -69,6 +69,6 @@ public class MiniController : MonoBehaviour
 
     public void OnMoveMessage(Vector3 destination)
     {
-        agent.SetDestination(destination);
+        Agent.SetDestination(destination);
     }
 }

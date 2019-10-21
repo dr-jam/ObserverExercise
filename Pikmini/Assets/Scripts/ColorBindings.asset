@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: ColorBindings
   m_EditorClassIdentifier: 
   Group1Color: {r: 0.4117647, g: 0.8235294, b: 0.90588236, a: 1}
-  Group2Color: {r: 0.9368335, g: 1, b: 0.6367924, a: 1}
-  Group3Color: {r: 0.98039216, g: 0.4117647, b: 0, a: 1}
+  Group2Color: {r: 0.8784314, g: 0.89411765, b: 0.8, a: 1}
+  Group3Color: {r: 0.98039216, g: 0.7985001, b: 0, a: 1}

@@ -6,13 +6,13 @@ using Pikmini;
 public class ButtonManager : MonoBehaviour
 {
     [SerializeField]
-    private Text colorText0, colorText1, colorText2;
+    private Text ColorText0, ColorText1, ColorText2;
     [SerializeField]
-    private GameObject dest1, dest2, dest3;
+    private GameObject Destination1, Destination2, Destination3;
     [SerializeField]
-    private GameObject scriptHomeObj;
+    private GameObject ScriptHome;
     [SerializeField]
-    private ColorBind colorbindings;
+    private ColorBind ColorBindings;
 
     private PublisherManager PublisherManager;
     private Color color;
@@ -21,7 +21,7 @@ public class ButtonManager : MonoBehaviour
 
     private void Start ()
     {
-        PublisherManager = scriptHomeObj.GetComponent<PublisherManager>();
+        PublisherManager = ScriptHome.GetComponent<PublisherManager>();
     }
     public void Color0()
     {
@@ -37,19 +37,19 @@ public class ButtonManager : MonoBehaviour
     }
     public void Dest1()
     {
-        this.Destination = dest1.transform.position;
+        this.Destination = Destination1.transform.position;
     }
     public void Dest2()
     {
-        this.Destination = dest2.transform.position;
+        this.Destination = Destination2.transform.position;
     }
     public void Dest3()
     {
-        this.Destination = dest3.transform.position;
+        this.Destination = Destination3.transform.position;
     }
     public void Send()
     {
-        if (null != this.Destination && -1 != this.ColorID)
+        if (-1 != this.ColorID)
         {
             PublisherManager.SendMessageWithPublisher(this.ColorID, this.Destination);
         }
@@ -57,8 +57,8 @@ public class ButtonManager : MonoBehaviour
 
     public void Update()
     {
-        this.colorText0.color = this.colorbindings.GetGroup1Color();
-        this.colorText1.color = this.colorbindings.GetGroup2Color();
-        this.colorText2.color = this.colorbindings.GetGroup3Color();
+        this.ColorText0.color = this.ColorBindings.GetGroup1Color();
+        this.ColorText1.color = this.ColorBindings.GetGroup2Color();
+        this.ColorText2.color = this.ColorBindings.GetGroup3Color();
     }
 }

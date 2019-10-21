@@ -24,15 +24,15 @@ public class MiniController : MonoBehaviour
         {
             case 1:
                 this.gameObject.GetComponent<Material>().color = this.ColorBindings.GetGroup1Color();
-                //set up a watcher
+                //set up a watcher for Stage 1.1
                 break;
             case 2:
                 this.gameObject.GetComponent<Material>().color = this.ColorBindings.GetGroup1Color();
-                //set up a watcher
+                //set up a watcher for Stage 1.1
                 break;
             case 3:
                 this.gameObject.GetComponent<Material>().color = this.ColorBindings.GetGroup1Color();
-                //set up a watcher
+                //set up a watcher for Stage 1.1
                 break;
             default:
                 Debug.Log("MiniController is Awake but has no group.");
@@ -46,7 +46,12 @@ public class MiniController : MonoBehaviour
         this.GroupID = (this.GroupID % this.PublisherManager.GroupCount) + 1;
         this.PublisherManager.Register(GroupID, OnMoveMessage);
     }
-    
+
+    /// <summary>
+    /// Updates the color of the object.
+    /// </summary>
+    /// <param name="color">The Renderer's material property will be updated
+    /// with this color parameter.</param>
     private void ChangeColor(Color color)
     {
         foreach (Transform child in transform)

@@ -13,9 +13,11 @@ public class PublisherManager : MonoBehaviour
     public void SendMessageWithPublisher(int group, Vector3 destination)
     {
     }
+
     public void Register(int group, Action<Vector3> callback)
     {
     }
+
     public void Unregister(int group, Action<Vector3> callback)
     {
     }

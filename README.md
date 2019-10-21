@@ -62,14 +62,14 @@ This project constists of a single scene call `PikminiPlayground` that is locate
 * **Prefabs/AniMini** is the prefab that will used to instantiate Pikminis. There is an alternate meeple-themed prefab named * **Mini** that you can explore as well.  
 
 The following are the scripts involved in this project:  
-* **ButtonManager.cs** is a utility script that holds properites and methods that are used for responding to button pressed in the user interface.
+* **ButtonManager.cs** is a utility script that holds properites and methods that are used for responding to button pressed in the user interface. **This script initiates the messages for publisers to send to subscribers in Stage 2.**
 * **ColorBind.cs** holds the unique colors for *Group1*, *Group2*, and *Group3* of Pikminis. It also contains methods to retrieve the color of a group (which is critical for the watchers in Stage 1!). 
 * **ColorBindings** is not a script but an instantiation of an asset created via the [CreateAssetMenu](https://docs.unity3d.com/ScriptReference/CreateAssetMenuAttribute.html) attribute of `ColorBind`. You will not have to deal with the details of this attribute in the project. However, it is a handy trick to have in your bag.
 * **ColorWatcher.cs** is a partial implementation of the Watcher variant of the Observer pattern that you will complete it in this exercise.
 * **GenerateMinis.cs** is the script that generates randomly-parameterized Pikminis. In the stock exercise project, it is a component of the `Spawn` game object.
 * **MiniController.cs** contains information about and controls individual Pikminis. Each generated Pikimini contains a `MiniController` component. You will be heavily modifying this file throughout the exercise.
 * **PublisherManager.cs** contains an instance of the PubSub pattern for each of the three groups of Pikminis. You will be writing most of this script.
-* **IPublisher.cs** is the interface declaration for publishers in this exercise and mandages `Register`, `Unregister`, and `Notify` methods.
+* **IPublisher.cs** is the interface declaration for publishers in this exercise and mandages `Subscribe`, `Unsubscribe`, and `Notify` methods.
 * **IWatcher.cs** is the interface declaration for watchers and mandates the `Watch` method.
 
 ## Stage 1: Watcher Pattern
@@ -128,11 +128,11 @@ In this stage, create a new `Publisher.cs` that implements the `IPublisher.cs` i
 
 At this point create the appropriate methods from the `IPublisher`. 
 
-You should create `Register`, `Unregister`, and `Notify` methods within your own `Publisher.cs` file.
+You should create `Subscribe`, `Unsubscribe`, and `Notify` methods within your own `Publisher.cs` file.
 
-`Register` should `Add` the `Action<Vector3>` `notifier` to a `collection`.
+`Subscribe` should `Add` the `Action<Vector3>` `notifier` to a `collection`.
 
-`Unregister` should `Remove` the `Action<Vector3>` `notifier` from the `collection`
+`Unsubscribe` should `Remove` the `Action<Vector3>` `notifier` from the `collection`
 
 `Notify` should invoke all of the `Notifiers` with the correct argument.
 
@@ -148,7 +148,7 @@ However, the `PublisherManager.cs` file needs its own `Subscribe` and `Unsubscri
 
 ### 2.3: Sending messages
 
-Now the Pikminis are able to register to a new publisher or drop that publisher like a hat. Unfortunately the Pikminis aren't able to get a message yet!
+Now the Pikminis are able to subscribe to a new publisher or drop that publisher like a hat. Unfortunately the Pikminis aren't able to get a message yet!
 
 In order to do this, the `SendMessageWithPublisher` within the `PublisherManager.cs` file must be implemented for our small Pikminis to move around! 
 

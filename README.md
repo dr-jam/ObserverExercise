@@ -79,7 +79,7 @@ If one of the three colors in the ColorBind asset change (through manipulation w
 
 ### 1.1: The Pikmini. Always watching, always changing.
 
-This portion of the stage will require modification to the `ColorWatcher.cs` and `MiniController.cs`.
+This portion of the stage will require modification to the `ColorWatcher.cs` and `MiniController.cs` scripts.
 
 In order to have the Pikmini change `Color`, the Pikmini must be watching the `ColorBinding` asset.
 
@@ -89,11 +89,11 @@ Here is a diagram that shows the relationship an instance of `ColorWatcher` has 
 
 In order to do this, you must:
 
-* Instantiate new `ColorWatcher` objects within the `Awake` function that is passed in the correct delegates for the assigned `GroupID`.
+* Instantiate new `ColorWatcher` objects within the `Awake` function that passes in the correct delegates for the assigned `GroupID`. 
 
-* Create an `Update` function within `MiniController.cs` that executes with the `ColorWatcher`s `Watch` method. You will implement this method next.
+* Create an `Update` function within `MiniController.cs` that executes with the `ColorWatcher`'s `Watch` method. You will implement this method next.
 
-In order to properly get the Pikimini to `Watch`, `ColorWatcher` needs a more fleshed out `Watch` method. This method should:
+In order to properly get the Pikmini to `Watch`, `ColorWatcher` needs a more fleshed out `Watch` method. This method should:
 
 * Store the return value of `GetColorValue` to a variable. This variable should be named `PolledValue`.
 
@@ -103,19 +103,19 @@ In order to properly get the Pikimini to `Watch`, `ColorWatcher` needs a more fl
 
 If implemented correctly, the Pikminis should be updating their color to whatever group they have been randomly assigned. 
 
-By altering the `Color` in the `ColorBinding` asset within the Editor, the Pikmini should update their `Color` accordingly.
+By altering the `Color` in the `ColorBinding` asset within the Editor, the Pikminis should update their `Color` accordingly.
 
 ### 1.2: Pikmini watching periodically.
 
-Constantly polling a value to check for changes in both computationally expensive and is taxing on the flighty Pikminis. To address this problem, the `Watch` function should be called less often. We will use the `Throttle` field within the `MiniController.cs` to "throttle" how often a Pikmini should `Watch`:
+Constantly polling a value to check for changes is both computationally expensive and taxing on the flighty Pikminis. To address this problem, the `Watch` function should be called less often. We will use the `Throttle` field within the `MiniController.cs` script to "throttle" how often a Pikmini should `Watch`:
 
-*  In `Update`, check to see if `TimeToWatch` is greater than `Throttle`.
+* In `Update`, check to see if `TimeToWatch` is greater than `Throttle`.
 
 * If it is, then let the Pikmini `Watch` and reset `TimeToWatch` to `0.0f`.
 
 * If it is not, add `Time.deltaTime` to `TimeSinceChecked`.
 
-If implemented correctly, the Pikmini should have a controllable delay before their `Color` changes.
+If implemented correctly, the Pikminis should have a controllable delay before their `Color` changes.
 
 ## Stage 2: PubSub Pattern
 In this stage, This stage will focus on the Publisher/Subscriber variant of the Observer pattern as discussed in lecture. 

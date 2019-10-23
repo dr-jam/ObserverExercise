@@ -5,9 +5,9 @@ namespace Pikmini
 {
     public interface IPublisher
     {
-        void Unregister(Action<Vector3> notifier);
+        void Unsubscribe(Action<Vector3> notifier);
 
-        void Register(Action<Vector3> notifier);
+        void Subscribe(Action<Vector3> notifier);
 
         void Notify(Vector3 transform);
     }

@@ -10,7 +10,6 @@ public class MiniController : MonoBehaviour
     private ColorBind ColorBindings;
     private ColorWatcher Watcher;
     private PublisherManager PublisherManager;
-    [SerializeField]
     private float Throttle;
     private int GroupID = 1;
     

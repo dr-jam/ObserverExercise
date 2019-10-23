@@ -170,11 +170,11 @@ When the player enters a `Fire2` command, a Pikmini should spawn on the ancestra
 
 To do this, you should create a script called `PikminiSpawner.cs` and attach it to the `Spawn` `GameObject`.
 
-In this script when the `Jump` input is detected, a new Pikimini should be made through the `Instantiate` method based on the `AniMini` prefab.
+In this script when the `Jump` input is detected, a new Pikmini should be made through the `Instantiate` method based on the `AniMini` prefab.
 
 In summary:
 * Create a script called `PikminiSpawner.cs` and attach it to `Spawn`.
 * The script should react `Fire2` input by spawning a new instance of the `AniMini` prefab.
 * The `MiniController.cs` script should be augmented to destroy the `AniMini` instance it is attached to 10 to 40 seconds after the instance was created. When the instance is created, set its lifespan to fall randomly within that 10 to 40 seconds range.
 
-It is your choice to spawn Pikimini instances [`Input.GetButton`](https://docs.unity3d.com/ScriptReference/Input.GetButton.html) or [`Input.GetButtonDown`](https://docs.unity3d.com/ScriptReference/Input.GetButtonDown.html)   
+It is your choice to spawn Pikmini instances [`Input.GetButton`](https://docs.unity3d.com/ScriptReference/Input.GetButton.html) or [`Input.GetButtonDown`](https://docs.unity3d.com/ScriptReference/Input.GetButtonDown.html)   

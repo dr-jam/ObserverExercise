@@ -90,3 +90,91 @@ Here is a diagram that shows the relationship an instance of `ColorWatcher` has 
 In order to do this, you must:
 
 * Instantiate new `ColorWatcher` objects within the `Awake` function that passes in the correct delegates for the assigned `GroupID`. 
+
+
+* Create an `Update` function within `MiniController.cs` that executes with the `ColorWatcher`'s `Watch` method. You will implement this method next.
+
+In order to properly get the Pikmini to `Watch`, `ColorWatcher` needs a more fleshed out `Watch` method. This method should:
+
+* Store the return value of `GetColorValue` to a variable. This variable should be named `PolledValue`.
+
+* Compare the `PolledValue` to the current `Value`. 
+
+* If the values are different, then invoke the `Callback` with the proper arguments.
+
+If implemented correctly, the Pikminis should be updating their color to whatever group they have been randomly assigned. 
+
+By altering the `Color` in the `ColorBinding` asset within the Editor, the Pikminis should update their `Color` accordingly.
+
+### 1.2: Pikmini watching periodically.
+
+Constantly polling a value to check for changes is both computationally expensive and taxing on the flighty Pikminis. To address this problem, the `Watch` function should be called less often. We will use the `Throttle` field within the `MiniController.cs` script to "throttle" how often a Pikmini should `Watch`:
+
+* In `Update`, check to see if `TimeToWatch` is greater than `Throttle`.
+
+* If it is, then let the Pikmini `Watch` and reset `TimeToWatch` to `0.0f`.
+
+* If it is not, add `Time.deltaTime` to `TimeSinceChecked`.
+
+If implemented correctly, the Pikminis should have a controllable delay before their `Color` changes.
+
+## Stage 2: PubSub Pattern
+In this stage, This stage will focus on the Publisher/Subscriber variant of the Observer pattern as discussed in lecture. 
+
+### 2.1: Publish first, Subscribe second
+
+The Pikmini have decided it's time to create the first of their publishers.
+
+In this stage, create a new `Publisher.cs` that implements the `IPublisher.cs` interface.
+
+At this point create the appropriate methods from the `IPublisher`. 
+
+You should create `Subscribe`, `Unsubscribe`, and `Notify` methods within your own `Publisher.cs` file.
+
+`Subscribe` should `Add` the `Action<Vector3>` `notifier` to a `collection`.
+
+`Unsubscribe` should `Remove` the `Action<Vector3>` `notifier` from the `collection`
+
+`Notify` should invoke all of the `Notifiers` with the correct argument.
+
+### 2.2: Managing those rowdy publishers.
+
+With this newly created `Publisher` class, `Instantiate` three publishers within `PublisherManager.cs`.
+
+However, the `PublisherManager.cs` file needs its own `Subscribe` and `Unsubscribe` methods. `SendMessageWithPublisher` will be discussed in a later stage.
+
+`SubscribeToGroup` should check to see which `GroupID` has been passed in and `Subscribe` the `callback` with the correct `Publisher`.
+
+`UnsubscribeFromGroup` should check to see which `GroupID` has been passed in and `Sunsubscribe` the `callback` with the correct `Publisher`.
+
+### 2.3: Sending messages
+
+Now the Pikminis can subscribe to a new publisher or drop that publisher like a hat. Unfortunately, the Pikminis aren't able to get a message yet!
+
+In order to do this, the `SendMessageWithPublisher` within the `PublisherManager.cs` file must be implemented for our small Pikminis to move around! 
+
+`SendMessageWithPublisher` should `Notify` the correct `Publisher` with a new `Destination`.
+
+At this point, by using the UIButtons, you should be able to click on a color button and a destination button to set which group should go where. The correctly colored Pikminis should move to the chosen destination.
+
+## 3: A Mini Tale of Life and Death
+Pikminis exist on the physical plane. Much like their fictional counterparts, Pikmin, Pikminis have a finite existence. 
+
+Pikmini might love changing their color and moving to three different destinations, however, their life spans range roughly around 10 to 40 seconds. 
+
+Luckily, Pikminis can reproduce asexually.
+
+All that they need is a `Fire2` command.
+
+When the player enters a `Fire2` command, a Pikmini should spawn on the ancestral home of the Pikmini, also know in the common tongue as `Spawn`.
+
+To do this, you should create a script called `PikminiSpawner.cs` and attach it to the `Spawn` `GameObject`.
+
+In this script when the `Jump` input is detected, a new Pikimini should be made through the `Instantiate` method based on the `AniMini` prefab.
+
+In summary:
+* Create a script called `PikminiSpawner.cs` and attach it to `Spawn`.
+* The script should react `Fire2` input by spawning a new instance of the `AniMini` prefab.
+* The `MiniController.cs` script should be augmented to destroy the `AniMini` instance it is attached to 10 to 40 seconds after the instance was created. When the instance is created, set its lifespan to fall randomly within that 10 to 40 seconds range.
+
+It is your choice to spawn Pikimini instances [`Input.GetButton`](https://docs.unity3d.com/ScriptReference/Input.GetButton.html) or [`Input.GetButtonDown`](https://docs.unity3d.com/ScriptReference/Input.GetButtonDown.html)   

@@ -56,8 +56,7 @@ public class MiniController : MonoBehaviour
     {
         foreach (Transform child in transform)
         {
-            Renderer rend = child.GetComponent<Renderer>();
-            rend.material.SetColor("_Color", color);
+            child.GetComponent<Renderer>().material.SetColor("MainColor", color);
         }
     }
 

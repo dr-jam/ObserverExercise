@@ -250,9 +250,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ebb1a38406904341a9819d033cdebda, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Agent: {fileID: 0}
+  Agent: {fileID: -3476492233358530689}
   ColorBindings: {fileID: 11400000, guid: a9ae52a69f1e25e469a8b4538b96ca79, type: 2}
-  Throttle: 0
 --- !u!195 &-3476492233358530689
 NavMeshAgent:
   m_ObjectHideFlags: 0

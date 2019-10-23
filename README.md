@@ -161,14 +161,19 @@ Pikminis exist on the physical plane. Much like their fictional counterparts, Pi
 
 Pikmini might love changing their color and moving to three different destinations, however their life spans range roughly around 10 to 40 seconds. 
 
-Luckily, Pikminis are able to reproduce asexually. 
+Luckily, Pikminis are able to reproduce asexually. e
 
-All that they need is a `Jump` command.
+All that they need is a `Fire2` command.
 
-When player enters a `Jump` command, a Pikmini should spawn on the ancestoral home of the Pikmini, also know in the common tongue as `Spawn`.
+When player enters a `Fire2` command, a Pikmini should spawn on the ancestoral home of the Pikmini, also know in the common tongue as `Spawn`.
 
 To do this, you should create a script called `PikminiSpawner.cs` and attach it to the `Spawn` `GameObject`.
 
-In this script when the `Jump` input is detected, a new Pikimini should be made through the `Instantiate` method based on the `Mini` prefab.
+In this script when the `Jump` input is detected, a new Pikimini should be made through the `Instantiate` method based on the `AniMini` prefab.
+
+In summary:
+* Create a script called `PikminiSpawner.cs` and attach it to `Spawn`.
+* The script should react `Fire2` input by spawning a new instance of the `AniMini` prefab.
+* The `MiniController.cs` script should be augmented to destroy the `AniMini` instance it is attached to 10 to 40 seconds after the instance was created. When the instance is created, set its lifepsan fall randomly within that 10 to 40 second range.
 
 It is your choice to spawn Pikimini instances [`Input.GetButton`](https://docs.unity3d.com/ScriptReference/Input.GetButton.html) or [`Input.GetButtonDown`](https://docs.unity3d.com/ScriptReference/Input.GetButtonDown.html)   

@@ -61,7 +61,7 @@ public class MiniController : MonoBehaviour
 
     private void RandomizeBody()
     {
-        var randomScale = Random.Range(0.1f, 1.5f);
+        var randomScale = Random.Range(0.1f, 1.0f);
         this.gameObject.transform.localScale *= randomScale;
     }
 

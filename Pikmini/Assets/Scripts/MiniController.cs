@@ -39,12 +39,13 @@ public class MiniController : MonoBehaviour
         }
     }
 
-    void OnMouseDown()
-    {
-        this.PublisherManager.UnsubscribeFromGroup(GroupID, OnMoveMessage);
-        this.GroupID = (this.GroupID % this.PublisherManager.GroupCount) + 1;
-        this.PublisherManager.SubscribeToGroup(GroupID, OnMoveMessage);
-    }
+// Please ignore the OnMouseDown function - does not work in Unity 2019 versions
+//     void OnMouseDown()
+//     {
+//         this.PublisherManager.UnsubscribeFromGroup(GroupID, OnMoveMessage);
+//         this.GroupID = (this.GroupID % this.PublisherManager.GroupCount) + 1;
+//         this.PublisherManager.SubscribeToGroup(GroupID, OnMoveMessage);
+//     }
 
     /// <summary>
     /// Updates the color of the object.

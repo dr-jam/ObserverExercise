@@ -89,7 +89,7 @@ Here is a diagram that shows the relationship an instance of `ColorWatcher` has 
 
 In order to do this, you must:
 
-* Instantiate new `ColorWatcher` objects within the `Awake` function that passes in the correct delegates for the assigned `GroupID`. 
+* Instantiate new `ColorWatcher` objects within the `Awake` function that passes in the correct delegates for the assigned `GroupID`. The first argument can be a bit tricky to decipher. You should look at the `GetGroupXColor` methods in `ColorBind.cs`.
 
 
 * Create an `Update` function within `MiniController.cs` that executes with the `ColorWatcher`'s `Watch` method. You will implement this method next.
@@ -110,7 +110,7 @@ By altering the `Color` in the `ColorBinding` asset within the Editor, the Pikmi
 
 Constantly polling a value to check for changes is both computationally expensive and taxing on the flighty Pikminis. To address this problem, the `Watch` function should be called less often. We will use the `Throttle` field within the `MiniController.cs` script to "throttle" how often a Pikmini should `Watch`:
 
-* In `Update`, check to see if `TimeToWatch` is greater than `Throttle`.
+* In `Update`, check to see if `TimeSinceChecked` is greater than `Throttle`.
 
 * If it is, then let the Pikmini `Watch` and reset `TimeToWatch` to `0.0f`.
 

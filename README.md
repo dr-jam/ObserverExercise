@@ -112,7 +112,7 @@ Constantly polling a value to check for changes is both computationally expensiv
 
 * In `Update`, check to see if `TimeSinceChecked` is greater than `Throttle`.
 
-* If it is, then let the Pikmini `Watch` and reset `TimeToWatch` to `0.0f`.
+* If it is, then let the Pikmini `Watch` and reset `TimeSinceChecked` to `0.0f`.
 
 * If it is not, add `Time.deltaTime` to `TimeSinceChecked`.
 

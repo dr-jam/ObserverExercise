@@ -170,7 +170,7 @@ When the player enters a `Fire2` command, a Pikmini should spawn on the ancestra
 
 To do this, you should create a script called `PikminiSpawner.cs` and attach it to the `Spawn` `GameObject`.
 
-In this script when the `Jump` input is detected, a new Pikmini should be made through the `Instantiate` method based on the `AniMini` prefab.
+In this script when the `Fire2` input is detected, a new Pikmini should be made through the `Instantiate` method based on the `AniMini` prefab.
 
 In summary:
 * Create a script called `PikminiSpawner.cs` and attach it to `Spawn`.

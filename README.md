@@ -52,10 +52,12 @@ This exercise is due Wednesday, October 30th at 11:59 pm on GitHub Classroom. Th
 
 This project consists of a single scene call `PikminiPlayground` that is located in the Assets/Scenes directory. The following are descriptions of the game objects in the scene that you will be interacting with for this exercise:  
 
-* **ScriptHome** is an empty `GameObject` container for select scripts.  
+* **ScriptHome** is an empty `GameObject` container for scripts that reason over the scene but do not have a home in a specific `GameObject`.  
 * **Canvas** holds the user interface elements used to select shapes, colors, and send commands to the Pikminis.  
 * **Circle Destination, Cube Destination, and Cylinder Destination** are the locations that the Pikminis can be sent to.  
 * **Spawn** serves as the initial spawn point for the Pikminis and is where the `GenerateMinis.cs` script resides.  
+* **NavMesh** is the overlay mesh used for path planning.
+* **Level** contains the basic prefabs (e.g. `Tree`s) and geometry of the level including the `Water` which features procedural shader-based water texturing. See [PikminiKEY/Assets/Materials/CartoonWater.shadergraph](Pikmini/Assets/Materials/CartoonWater.shadergraph).
 
 ### Assets and Scripts
 

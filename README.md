@@ -44,7 +44,7 @@ The points distribution for the stages totals to 70 points and can be found in t
 
 ### Due Date and Submission Information
 
-This exercise is due Wednesday, October 30th at 11:59 pm on GitHub Classroom. The master branch as found on your individual exercise repository will be evaluated.
+This exercise is due Wednesday, April 28th at 11:59 pm on GitHub Classroom. The master branch as found on your individual exercise repository will be evaluated.
 
 ## Description of Provided Unity Project
 
@@ -121,7 +121,7 @@ Constantly polling a value to check for changes is both computationally expensiv
 If implemented correctly, the Pikminis should have a controllable delay before their `Color` changes.
 
 ## Stage 2: PubSub Pattern
-In this stage, This stage will focus on the Publisher/Subscriber variant of the Observer pattern as discussed in lecture. 
+In this stage, This stage will focus on the Publisher/Subscriber variant of the Observer pattern.  
 
 ### 2.1: Publish, Subscribe, Notify, Profit
 

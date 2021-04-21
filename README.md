@@ -160,7 +160,7 @@ In order to do this, the `SendMessageWithPublisher` within the `PublisherManager
 At this point, by using the UIButtons, you should be able to click on a color button and a destination button to set which group should go where. The correctly colored Pikminis should move to the chosen destination.
 
 ## 3: A Mini Tale of Life and Death
-In this virtual workd, Pikminis exist on the physical plane. Much like their fictional counterparts, Pikmin, Pikminis have a finite existence. 
+In this virtual world, Pikminis exist on the physical plane. Much like their fictional counterparts, Pikmin, Pikminis have a finite existence. 
 
 Pikmini might love changing their color and moving to three different destinations, however, their life spans range roughly around 10 to 40 seconds. 
 

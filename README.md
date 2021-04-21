@@ -57,11 +57,11 @@ This project consists of a single scene call `PikminiPlayground` that is located
 * **Circle Destination, Cube Destination, and Cylinder Destination** are the locations that the Pikminis can be sent to.  
 * **Spawn** serves as the initial spawn point for the Pikminis and is where the `GenerateMinis.cs` script resides.  
 * **NavMesh** is the overlay mesh used for path planning.
-* **Level** contains the basic prefabs (e.g. `Tree`s) and geometry of the level including the `Water` which features procedural shader-based water texturing. See [PikminiKEY/Assets/Materials/CartoonWater.shadergraph](Pikmini/Assets/Materials/CartoonWater.shadergraph).
+* **Level** contains the basic prefabs instances (e.g. `Tree`s) and geometry of the level including the `Water` which features procedural shader-based water texturing. See [PikminiKEY/Assets/Materials/CartoonWater.shadergraph](Pikmini/Assets/Materials/CartoonWater.shadergraph).
 
 ### Assets and Scripts
 
-* **Prefabs/AniMini** is the prefab that will be used to instantiate Pikminis. There is an alternate meeple-themed prefab named * **Mini** that you can explore as well.  
+* **Prefabs/AniMini** is the prefab that will be used to instantiate Pikminis. There is an alternate meeple-themed prefab named **Mini** that you can explore as well.  
 
 The following are the scripts involved in this project:  
 * **ButtonManager.cs** is a utility script that holds properties and methods that are used for responding to button pressed in the user interface. **This script initiates the messages for publishers to send to subscribers in Stage 2.**

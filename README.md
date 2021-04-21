@@ -121,7 +121,7 @@ Constantly polling a value to check for changes is both computationally expensiv
 If implemented correctly, the Pikminis should have a controllable delay before their `Color` changes.
 
 ## Stage 2: PubSub Pattern
-In this stage, This stage will focus on the Publisher/Subscriber variant of the Observer pattern as discussed in lecture. 
+In this stage, This stage will focus on the Publisher/Subscriber variant of the Observer pattern.  
 
 ### 2.1: Publish, Subscribe, Notify, Profit
 

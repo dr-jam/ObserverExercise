@@ -106,7 +106,7 @@ If implemented correctly, the Pikminis should be updating their color to whateve
 
 By altering the `Color` in the `ColorBinding` asset within the Editor, the Pikminis should update their `Color` accordingly.
 
-### 1.2: Pikmini watching periodically.
+### 1.2: Pikmini Peeping Periodically
 
 Constantly polling a value to check for changes is both computationally expensive and taxing on the flighty Pikminis. To address this problem, the `Watch` function should be called less often. We will use the `Throttle` field within the `MiniController.cs` script to "throttle" how often a Pikmini should `Watch`:
 
@@ -121,7 +121,7 @@ If implemented correctly, the Pikminis should have a controllable delay before t
 ## Stage 2: PubSub Pattern
 In this stage, This stage will focus on the Publisher/Subscriber variant of the Observer pattern as discussed in lecture. 
 
-### 2.1: Publish first, Subscribe second
+### 2.1: Publish, Subscribe, Notify, Profit
 
 The Pikmini have decided it's time to create the first of their publishers.
 
@@ -137,7 +137,7 @@ You should create `Subscribe`, `Unsubscribe`, and `Notify` methods within your o
 
 `Notify` should invoke all of the `Notifiers` with the correct argument.
 
-### 2.2: Managing those rowdy publishers.
+### 2.2: Purveying Publishers
 
 With this newly created `Publisher` class, `Instantiate` three publishers within `PublisherManager.cs`.
 
@@ -147,7 +147,7 @@ However, the `PublisherManager.cs` file needs its own `Subscribe` and `Unsubscri
 
 `UnsubscribeFromGroup` should check to see which `GroupID` has been passed in and `Sunsubscribe` the `callback` with the correct `Publisher`.
 
-### 2.3: Sending messages
+### 2.3: Amassing Messages
 
 Now the Pikminis can subscribe to a new publisher or drop that publisher like a hat. Unfortunately, the Pikminis aren't able to get a message yet!
 
@@ -158,7 +158,7 @@ In order to do this, the `SendMessageWithPublisher` within the `PublisherManager
 At this point, by using the UIButtons, you should be able to click on a color button and a destination button to set which group should go where. The correctly colored Pikminis should move to the chosen destination.
 
 ## 3: A Mini Tale of Life and Death
-Pikminis exist on the physical plane. Much like their fictional counterparts, Pikmin, Pikminis have a finite existence. 
+In this virtual workd, Pikminis exist on the physical plane. Much like their fictional counterparts, Pikmin, Pikminis have a finite existence. 
 
 Pikmini might love changing their color and moving to three different destinations, however, their life spans range roughly around 10 to 40 seconds. 
 

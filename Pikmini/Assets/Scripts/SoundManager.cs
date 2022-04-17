@@ -51,7 +51,7 @@ public class SoundManager : MonoBehaviour
         }
 
         //play initial track
-        this.PlayMusicTrack("Smiling");
+        this.PlayMusicTrack("PartyTonight");
     }
 
     public void PlayMusicTrack(string title)

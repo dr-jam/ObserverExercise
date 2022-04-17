@@ -1110,20 +1110,20 @@ MonoBehaviour:
   musicMixerGroup: {fileID: 0}
   sfxMixerGroup: {fileID: 0}
   musicTracks:
-  - clip: {fileID: 8300000, guid: fefe0156734611308bdad76c49deed81, type: 3}
+  - clip: {fileID: 8300000, guid: 514cbe6502e46ddd9814576714c318cb, type: 3}
     audioSource: {fileID: 0}
-    title: Smiling
+    title: PartyTonight
     volume: 1
     pitch: 1
     loop: 1
   sfxClips:
-  - clip: {fileID: 8300000, guid: 8b49bd5f3136b9123a155af26548b71a, type: 3}
+  - clip: {fileID: 8300000, guid: ca75e579b4062c0139b07936577dad32, type: 3}
     audioSource: {fileID: 0}
     title: NewMini
     volume: 0.5
     pitch: 1
     loop: 0
-  - clip: {fileID: 8300000, guid: d48ce41fbfa80e92fb76a3d43d654af0, type: 3}
+  - clip: {fileID: 8300000, guid: e5f1edb223eaa62df873c92998591ac4, type: 3}
     audioSource: {fileID: 0}
     title: Menu
     volume: 0.5

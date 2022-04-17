@@ -12,6 +12,7 @@ public class GenerateMinis : MonoBehaviour
         for (int i = 0; i < this.MiniCount; i++)
         {
             Instantiate(this.MiniPrefab, this.gameObject.transform.position, Quaternion.identity);
+            FindObjectOfType<SoundManager>().PlaySoundEffect("NewMini");
         }
     }
 } 

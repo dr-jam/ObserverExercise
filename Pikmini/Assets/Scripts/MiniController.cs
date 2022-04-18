@@ -37,6 +37,7 @@ public class MiniController : MonoBehaviour
                 Debug.Log("MiniController is Awake but has no group.");
                 break;
         }
+        this.agent.SetDestination(new Vector3(Random.Range(-20f, 20f), this.gameObject.transform.position.y, Random.Range(-20f, 20f)));
     }
 
     /// <summary>
@@ -60,6 +61,6 @@ public class MiniController : MonoBehaviour
 
     public void OnMoveMessage(Vector3 destination)
     {
-        agent.SetDestination(destination);
+        this.agent.SetDestination(destination);
     }
 }

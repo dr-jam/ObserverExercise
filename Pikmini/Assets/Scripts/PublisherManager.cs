@@ -5,10 +5,10 @@ using Pikmini;
 public class PublisherManager : MonoBehaviour
 {
     
-    public int GroupCount { get; } = 3;
-    private IPublisher Group1Publisher;
-    private IPublisher Group2Publisher;
-    private IPublisher Group3Publisher;
+    public int groupCount { get; } = 3;
+    private IPublisher group1Publisher;
+    private IPublisher group2Publisher;
+    private IPublisher group3Publisher;
 
     /// <summary>
     /// Sends the the destination to all of the subscribers of a particular

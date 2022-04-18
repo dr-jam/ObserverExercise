@@ -5,32 +5,32 @@ using UnityEngine.AI;
 public class MiniController : MonoBehaviour
 {
     [SerializeField]
-    private NavMeshAgent Agent;
+    private NavMeshAgent agent;
     [SerializeField]
-    private ColorBind ColorBindings;
-    private ColorWatcher Watcher;
-    private PublisherManager PublisherManager;
-    private float Throttle;
-    private int GroupID = 1;
+    private ColorBind colorBindings;
+    private ColorWatcher watcher;
+    private PublisherManager publisherManager;
+    private float throttle;
+    private int groupID = 1;
     
     void Awake()
     {
-        this.PublisherManager = GameObject.FindGameObjectWithTag("Script Home").GetComponent<PublisherManager>();
+        this.publisherManager = GameObject.FindGameObjectWithTag("Script Home").GetComponent<PublisherManager>();
         this.RandomizeBody();
-        this.GroupID = Random.Range(1, 4);
-        this.PublisherManager.SubscribeToGroup(GroupID, OnMoveMessage);
-        switch(this.GroupID)
+        this.groupID = Random.Range(1, 4);
+        this.publisherManager.SubscribeToGroup(groupID, OnMoveMessage);
+        switch(this.groupID)
         {
             case 1:
-                this.ChangeColor(this.ColorBindings.GetGroup1Color());
+                this.ChangeColor(this.colorBindings.GetGroup1Color());
                 //set up a watcher for Stage 1.1
                 break;
             case 2:
-                this.ChangeColor(this.ColorBindings.GetGroup2Color());
+                this.ChangeColor(this.colorBindings.GetGroup2Color());
                 //set up a watcher for Stage 1.1
                 break;
             case 3:
-                this.ChangeColor(this.ColorBindings.GetGroup3Color());
+                this.ChangeColor(this.colorBindings.GetGroup3Color());
                 //set up a watcher for Stage 1.1
                 break;
             default:
@@ -60,6 +60,6 @@ public class MiniController : MonoBehaviour
 
     public void OnMoveMessage(Vector3 destination)
     {
-        Agent.SetDestination(destination);
+        agent.SetDestination(destination);
     }
 }

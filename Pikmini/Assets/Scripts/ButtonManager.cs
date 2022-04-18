@@ -6,59 +6,59 @@ using Pikmini;
 public class ButtonManager : MonoBehaviour
 {
     [SerializeField]
-    private Text ColorText0, ColorText1, ColorText2;
+    private Text colorText0, colorText1, colorText2;
     [SerializeField]
-    private GameObject Destination1, Destination2, Destination3;
+    private GameObject destination1, destination2, destination3;
     [SerializeField]
-    private GameObject ScriptHome;
+    private GameObject scriptHome;
     [SerializeField]
-    private ColorBind ColorBindings;
+    private ColorBind colorBindings;
 
-    private PublisherManager PublisherManager;
+    private PublisherManager pcublisherManager;
     private Color color;
-    private Vector3 Destination;
-    private int ColorID = -1;
+    private Vector3 destination;
+    private int colorID = -1;
 
     private void Start ()
     {
-        PublisherManager = ScriptHome.GetComponent<PublisherManager>();
+        pcublisherManager = scriptHome.GetComponent<PublisherManager>();
     }
     public void Color0()
     {
-        ColorID = 1;
+        colorID = 1;
     }
     public void Color1()
     {
-        ColorID = 2;
+        colorID = 2;
     }
     public void Color2()
     {
-        ColorID = 3;
+        colorID = 3;
     }
     public void Dest1()
     {
-        this.Destination = Destination1.transform.position;
+        this.destination = destination1.transform.position;
     }
     public void Dest2()
     {
-        this.Destination = Destination2.transform.position;
+        this.destination = destination2.transform.position;
     }
     public void Dest3()
     {
-        this.Destination = Destination3.transform.position;
+        this.destination = destination3.transform.position;
     }
     public void Send()
     {
-        if (-1 != this.ColorID)
+        if (-1 != this.colorID)
         {
-            PublisherManager.SendMessageWithPublisher(this.ColorID, this.Destination);
+            pcublisherManager.SendMessageWithPublisher(this.colorID, this.destination);
         }
     }
 
     public void Update()
     {
-        this.ColorText0.color = this.ColorBindings.GetGroup1Color();
-        this.ColorText1.color = this.ColorBindings.GetGroup2Color();
-        this.ColorText2.color = this.ColorBindings.GetGroup3Color();
+        this.colorText0.color = this.colorBindings.GetGroup1Color();
+        this.colorText1.color = this.colorBindings.GetGroup2Color();
+        this.colorText2.color = this.colorBindings.GetGroup3Color();
     }
 }

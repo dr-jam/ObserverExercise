@@ -3,10 +3,10 @@ using UnityEngine;
 
 public class ColorWatcher :  IWatcher
 {
-    private Color Value;
-    private Color PolledValue;
-    private Func<Color> GetColorValue;
-    private Action<Color> CallBack;
+    private Color value;
+    private Color polledValue;
+    private Func<Color> getColorValue;
+    private Action<Color> callBack;
 
 
     /// <summary>
@@ -20,8 +20,8 @@ public class ColorWatcher :  IWatcher
     /// via its only parameter.</param>
     public ColorWatcher(Func<Color> getColorValue, Action<Color> callback )
     {
-        this.GetColorValue = getColorValue;
-        this.CallBack = callback;
+        this.getColorValue = getColorValue;
+        this.callBack = callback;
         Watch();
     }
 

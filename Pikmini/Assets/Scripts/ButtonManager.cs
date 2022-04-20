@@ -52,6 +52,7 @@ public class ButtonManager : MonoBehaviour
         if (-1 != this.colorID)
         {
             pcublisherManager.SendMessageWithPublisher(this.colorID, this.destination);
+            FindObjectOfType<SoundManager>().PlaySoundEffect("SendMessage");
         }
     }
 

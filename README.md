@@ -141,7 +141,7 @@ You should create `Subscribe`, `Unsubscribe`, and `Notify` methods within your o
 
 ### 2.2: Purveying Publishers
 
-With this newly created `Publisher` class, `Instantiate` three publishers within `PublisherManager.cs`.
+With this newly created `Publisher` class, make three intsances of the publisher class within `PublisherManager.cs`.
 
 However, the `PublisherManager.cs` file needs its own `Subscribe` and `Unsubscribe` methods. `SendMessageWithPublisher` will be discussed in a later stage.
 

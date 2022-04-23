@@ -1004,9 +1004,9 @@ MonoBehaviour:
   colorText0: {fileID: 77847764}
   colorText1: {fileID: 1361711117}
   colorText2: {fileID: 2108890796}
-  destination1: {fileID: 1165273800}
-  destination2: {fileID: 642013279}
-  destination3: {fileID: 939133225}
+  destination1: {fileID: 1518615789}
+  destination2: {fileID: 880833250}
+  destination3: {fileID: 8694271918516890016}
   scriptHome: {fileID: 1063128564}
   colorBindings: {fileID: 11400000, guid: a9ae52a69f1e25e469a8b4538b96ca79, type: 2}
 --- !u!1001 &471650558

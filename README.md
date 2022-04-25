@@ -147,7 +147,7 @@ However, the `PublisherManager.cs` file needs its own `Subscribe` and `Unsubscri
 
 `SubscribeToGroup` should check to see which `GroupID` has been passed in and `Subscribe` the `callback` with the correct `Publisher`.
 
-`UnsubscribeFromGroup` should check to see which `GroupID` has been passed in and `Sunsubscribe` the `callback` with the correct `Publisher`.
+`UnsubscribeFromGroup` should check to see which `GroupID` has been passed in and `Unsubscribe` the `callback` with the correct `Publisher`.
 
 ### 2.3: Amassing Messages
 

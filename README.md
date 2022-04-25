@@ -174,7 +174,7 @@ To do this, you should create a script called `PikminiSpawner.cs` and attach it 
 
 In this script when the `Fire2` input is detected, a new Pikmini should be made through the `Instantiate` method based on the `AniMini` prefab.
 
-After you instantiate a new Pickmini, add sound with the following line of code (already found in GenerateMinis.cs):  
+After you instantiate a new Pikmini, add sound with the following line of code (already found in GenerateMinis.cs):  
 ```C#
 FindObjectOfType<SoundManager>().PlaySoundEffect("NewMini");
 ```  

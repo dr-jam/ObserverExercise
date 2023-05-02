@@ -112,7 +112,7 @@ By altering the `Color` in the `ColorBinding` asset within the Editor, the Pikmi
 
 Constantly polling a value to check for changes is computationally expensive and taxing on the flighty Pikminis. The `Watch` function should be called less often to address this problem. We will use the `Throttle` field within the `MiniController.cs` script to "throttle" how often a Pikmini should `Watch`:
 
-* In `Update`, check to see if `TimeSinceChecked` is greater than `Throttle`.
+* In `Update`, check to see if `TimeSinceChecked` is greater than or equal to `Throttle`.
 
 * If it is, let the Pikmini `Watch` and reset `TimeSinceChecked` to `0.0f`.
 
